@@ -1,0 +1,34 @@
+classes/
+
+### Eclipse ###
+
+.externalToolBuilders/
+.settings/
+bin/
+tmp/
+.classpath
+.loadpath
+.metadata
+.project
+.recommenders
+local.properties
+*.bak
+*.launch
+*.tmp
+*.swp
+*~.nib
+
+### VisualStudioCode ###
+.vscode/
+
+### Intellij ###
+.idea/
+out/
+*.iml
+*.ipr
+*.iws
+
+### Gradle ###
+.gradle
+.gradletasknamecache
+build/

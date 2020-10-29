@@ -1,0 +1,42 @@
+server:
+  type: default
+  rootPath: /api
+  applicationConnectors:
+    - type: http
+      port: 8080
+      useServerHeader: false
+      useDateHeader: false
+      useForwardedHeaders: true
+      headerCacheSize: 512 bytes
+      outputBufferSize: 32KiB
+      maxRequestHeaderSize: 8KiB
+      maxResponseHeaderSize: 8KiB
+      inputBufferSize: 8KiB
+      minBufferPoolSize: 64 bytes
+      bufferPoolIncrement: 1KiB
+      maxBufferPoolSize: 64KiB
+  startsAsRoot: false
+  registerDefaultExceptionMappers: false
+  requestLog:
+    appenders:
+      - type: console
+        threshold: ALL
+        timeZone: system
+        filterFactories:
+          - type: uri
+            uris:
+              - "/ping"
+              - "/healthcheck"
+              - "/metrics/prometheus"
+logging:
+  level: INFO
+  loggers:
+    "de.signaliduna":
+      level: INFO
+  appenders:
+    - type: console
+      layout:
+        type: json
+        includes: [timestamp, threadName, level, loggerName, message, mdc, exception]
+      threshold: ALL
+      timeZone: system

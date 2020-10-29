@@ -1,0 +1,60 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+sourceCompatibility = 11
+version '1.0.0'
+mainClassName = 'de.signaliduna.blueprint.MainApplication'
+
+project.ext {
+    sdaseVersion = '2.6.0'
+}
+
+repositories {
+    maven {
+        url 'http://m2repo.system.local/content/groups/full/'
+        allowInsecureProtocol true
+    }
+}
+
+dependencies {
+    implementation group: 'io.dropwizard', name: 'dropwizard-core'
+
+    implementation enforcedPlatform(group: 'org.sdase.commons', name: 'sda-commons-dependencies', version: sdaseVersion)
+    implementation enforcedPlatform(group: 'org.sdase.commons', name: 'sda-commons-bom', version: sdaseVersion)
+
+    implementation group: 'org.sdase.commons', name: 'sda-commons-server-auth'
+    implementation group: 'org.sdase.commons', name: 'sda-commons-server-jackson'
+    implementation group: 'org.sdase.commons', name: 'sda-commons-server-prometheus'
+    implementation group: 'org.sdase.commons', name: 'sda-commons-server-swagger'
+    implementation group: 'org.sdase.commons', name: 'sda-commons-server-trace'
+    implementation group: 'org.sdase.commons', name: 'sda-commons-server-weld'
+
+    testImplementation group: 'org.sdase.commons', name: 'sda-commons-server-testing'
+    testImplementation group: 'org.sdase.commons', name: 'sda-commons-server-auth-testing'
+    testImplementation group: 'org.sdase.commons', name: 'sda-commons-server-weld-testing'
+}
+
+sourceSets {
+    main {
+        java { output.resourcesDir = outputDir }
+    }
+    test {
+        java { output.resourcesDir = outputDir }
+    }
+    integTest {
+        java { output.resourcesDir = outputDir }
+    }
+}
+
+jar {
+    duplicatesStrategy = DuplicatesStrategy.INCLUDE
+}
+
+allprojects {
+    apply plugin: 'idea'
+    idea.module.inheritOutputDirs = true
+}
+
+run { args 'server', "$projectDir/config.yml" }

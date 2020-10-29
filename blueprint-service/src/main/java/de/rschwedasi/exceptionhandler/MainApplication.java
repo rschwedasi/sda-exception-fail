@@ -1,10 +1,10 @@
-package de.signaliduna.blueprint;
+package de.rschwedasi.exceptionhandler;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import de.signaliduna.blueprint.api.ExampleApi;
-import de.signaliduna.blueprint.config.MainConfiguration;
+import de.rschwedasi.exceptionhandler.api.ExampleApi;
+import de.rschwedasi.exceptionhandler.config.MainConfiguration;
 import io.dropwizard.Application;
 import io.dropwizard.configuration.EnvironmentVariableSubstitutor;
 import io.dropwizard.configuration.SubstitutingSourceProvider;

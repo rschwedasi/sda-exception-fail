@@ -1,10 +1,10 @@
-package de.signaliduna.blueprint.model;
+package de.rschwedasi.exceptionhandler.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 
-public class Nested {
+public class OkModel {
 
   @JsonProperty
   @Valid

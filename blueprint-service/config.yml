@@ -31,12 +31,12 @@ server:
 logging:
   level: INFO
   loggers:
-    "de.signaliduna":
+    "de.rschwedasi":
       level: INFO
   appenders:
     - type: console
       layout:
         type: json
-        includes: [timestamp, threadName, level, loggerName, message, mdc, exception]
+        includes: [ timestamp, threadName, level, loggerName, message, mdc, exception ]
       threshold: ALL
       timeZone: system

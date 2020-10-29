@@ -1,4 +1,4 @@
-package de.signaliduna.blueprint.model;
+package de.rschwedasi.exceptionhandler.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import javax.validation.constraints.NotNull;

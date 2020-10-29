@@ -1,4 +1,4 @@
-package de.signaliduna.blueprint.config;
+package de.rschwedasi.exceptionhandler.config;
 
 import io.dropwizard.Configuration;
 

@@ -1,7 +1,7 @@
-package de.signaliduna.blueprint.api;
+package de.rschwedasi.exceptionhandler.api;
 
-import de.signaliduna.blueprint.model.FailModel;
-import de.signaliduna.blueprint.model.OkModel;
+import de.rschwedasi.exceptionhandler.model.FailModel;
+import de.rschwedasi.exceptionhandler.model.OkModel;
 import io.swagger.annotations.Api;
 import javax.annotation.security.PermitAll;
 import javax.enterprise.context.ApplicationScoped;
